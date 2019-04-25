@@ -61,6 +61,55 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":
 })();
 </script>
 <!--[if lt IE 9]><script src="/sites/all/themes/business/js/html5.js"></script><![endif]-->
+	<script type="text/javascript">
+	function check(id){
+		switch(id){
+case 'c1':
+document.getElementById("s1").style.display='inline';
+			document.getElementById("s2").style.display='none';
+		document.getElementById("s3").style.display='none';
+		break;
+		case 'c2':
+document.getElementById("s1").style.display='none';
+			document.getElementById("s2").style.display='inline';
+		document.getElementById("s3").style.display='none';
+		break;
+		case 'c3':
+document.getElementById("s1").style.display='none';
+			document.getElementById("s2").style.display='none';
+		document.getElementById("s3").style.display='inline';
+		break;
+		default:
+document.getElementById("s1").style.display='none';
+			document.getElementById("s2").style.display='none';
+		document.getElementById("s3").style.display='none';
+		break;
+
+
+		}
+			
+		
+	
+}
+</script>
+
+
+<script type="text/javascript">
+	//onblur失去焦点事件，用户离开输入框时执行 JavaScript 代码：
+	//函数：验证邮箱格式
+  	function isEmail(strEmail){
+  		//定义正则表达式的变量:邮箱正则
+  		var reg=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  		console.log(strEmail);
+  		//文本框不为空，并且验证邮箱正则成功，给出正确提示
+  		if(strEmail != null && strEmail.search(reg) != -1)
+  		{
+  			document.getElementById("test_user").innerHTML = "<font color='green' size='4px'>√</font>";
+  		}else{
+  			document.getElementById("test_user").innerHTML = "<font color='red' size='4px'>X</font>";
+  		}
+  	}
+  </script>
 </head>
 <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-8 node-type-page">
     
@@ -179,7 +228,68 @@ jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":
 	<div style="width:80%">
   <div class="node node-page node-full">
     <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p style="font-size:18px; line-height:28px; ">coming soon...</p>
-</div></div></div>  </div>
+<div style="height: 100px">
+	
+</div>
+<div style="text-align:center;" >
+<h1>Chinese CHI 2019 Registration</h1>
+<br>
+<br>
+<form method="POST" action="https://formspree.io/965424940@qq.com">
+   <input type="name" name="name" placeholder="Your name"><br>
+   <p></p>
+  <input type="email" name="email" placeholder="Your email" onblur="isEmail(this.value)"/>
+  <h6 id="test_user">&nbsp;</h6>
+  <p>你所选择的注册类型</p><br>
+  <input id="c1"type="radio" name="type" value="1" onClick="check(this.id);" checked>学生&nbsp&nbsp&nbsp
+    <input id="c2" type="radio" name="type" value="2" onClick="check(this.id);" checked>非学生&nbsp&nbsp&nbsp
+    <input id="c3" type="radio" name="type" value="3" onClick="check(this.id);" checked>团体&nbsp&nbsp&nbsp<br>
+    <p> </p>
+<section id="s1" style="display:none">
+	<input type="name" name="school" placeholder="您所在的学校"><br>
+	<p></p>
+	<input type="name" name="major" placeholder="您所在的专业"><br>
+</section>
+<section id="s2" style="display:none">
+	<input type="name" name="occupation" placeholder="您的职业"><br>
+	<p></p>
+	<input type="name" name="institution" placeholder="您所在的单位"><br>
+	
+</section>
+<section id="s3" style="display:none">
+	<input type="name" name="occupation" placeholder="您的职业"><br>
+	<p></p>
+	<input type="name" name="institution" placeholder="您所在的单位"><br>
+	<p></p>
+	<p>请输入您的团队其他成员信息</p>
+	<textarea name="member info" id="doc-vld-ta-2-1" minlength="10"  required/(必填项) placeholder="格式：姓名，邮箱，职业，单位"  style="width: 350px;height: 200px"></textarea><br>
+</section>
+
+
+
+
+
+    <input id="s1" style="display:none" type="name" name="haha" placeholder="Your">
+    <input id="s2" style="display:none" type="name" name="haha" placeholder="Your name">
+    <input id="s3" style="display:none" type="name" name="haha" placeholder="hahah"><br>
+ <!-- <select name="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat">Fiat</option>
+<option value="audi">Audi</option>
+</select><br>-->
+ <!--<textarea name="message" placeholder="Test Message" style="width: 350px;height: 200px"></textarea><br>-->
+  <button type="submit">SEND</button>
+</form>
+</div>
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    </div></div></div>  </div>
 </div>
 <!---正文部分结束->
 
